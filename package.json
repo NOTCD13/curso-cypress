@@ -1,0 +1,32 @@
+{
+  "name": "curso-cypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "limpiar-reporte": "rimraf ./allure-report && rimraf ./allure-results",
+    "ejecutar-pruebas": "cypress run --headed --env allure=true",
+    "generar-reporte": "allure generate allure-results -o allure-report --clean",
+    "abrir-report": "allure open",
+    "test":" npx npm run limpiar-reporte && npx npm run ejecutar-pruebas && npx npm run generar-reporte && npx npm run abrir-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NOTCD13/curso-cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NOTCD13/curso-cypress/issues"
+  },
+  "homepage": "https://github.com/NOTCD13/curso-cypress#readme",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^14.3.3"
+  },
+  "dependencies": {
+    "@shelex/cypress-allure-plugin": "^2.41.1",
+    "allure-commandline": "^2.34.0",
+    "rimraf": "^6.0.1"
+  }
+}
