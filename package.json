@@ -20,7 +20,6 @@
     "url": "https://github.com/NOTCD13/curso-cypress/issues"
   },
   "homepage": "https://github.com/NOTCD13/curso-cypress#readme",
-  "description": "",
   "devDependencies": {
     "cypress": "^14.3.3"
   },
@@ -28,5 +27,6 @@
     "@shelex/cypress-allure-plugin": "^2.41.1",
     "allure-commandline": "^2.34.0",
     "rimraf": "^6.0.1"
-  }
+  },
+  "description": ""
 }
