@@ -4,7 +4,7 @@ import { Logger } from "./util/logger";
 // import { homeMethods } from "./pages/home/home.methods"
 // import { LoginMethods } from "./pages/login/login.methods"
 
-describe('template spec', () => {
+xdescribe('template spec', () => {
   it('passes', () => {
     // const usuario ="random01";
     // const contrasena = "random01";
