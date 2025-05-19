@@ -11,7 +11,6 @@ describe('template spec', () => {
     // LoginMethods.Login(usuario,contrasena)
     // cy.get('a#nameofuser').should("contain.text",usuario)
     // // cy.wait(5000)
-
     //--------------------------------------------------------------------------/
     // cy.visit('https://www.demoblaze.com/')
     // homeMethods.clickOnProductLink("Iphone 6 32gb")
