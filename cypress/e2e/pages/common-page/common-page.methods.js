@@ -24,11 +24,21 @@ export class CommonPageMethods{
         CommonPageElements.topMenu.SignUp.click();
     }
     
-     static verifyAlert(expectedMessage){
-        cy.on("window:alert",(str)=>{
+    static verifyAlert(expectedMessage){
+        cy.on('window:alert',(str)=>{
             expert(str).to.equal(expectedMessage)
         });
     }
     
-
+    static generateRandomString(length=10){
+        let result=" ";
+        const characters="abcdefghijklmnopqrstuvmxyz0123456789";
+        const charactersLength =characters.length;
+        let counter =0;
+        while (counter < length){
+            result += characters.charAt(Math.floor(Math.random()* charactersLength));
+            counter +=1;
+        }
+        return result;
+    }
 }
