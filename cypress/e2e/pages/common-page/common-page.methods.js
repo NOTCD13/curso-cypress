@@ -26,7 +26,7 @@ export class CommonPageMethods{
     
     static verifyAlert(expectedMessage){
         cy.on('window:alert',(str)=>{
-            expert(str).to.equal(expectedMessage)
+            expect(str).to.equal(expectedMessage)
         });
     }
     
@@ -40,5 +40,9 @@ export class CommonPageMethods{
             counter +=1;
         }
         return result;
+    }
+
+    static verifySignedUser(username){
+        CommonPageElements.signedUser.should('have.text',`Welcome ${username}`)
     }
 }
