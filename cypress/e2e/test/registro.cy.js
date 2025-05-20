@@ -5,9 +5,11 @@ import { SignupMethods } from "../pages/signUp/sign.methods";
 import { Logger } from "../util/logger";
 const user = CommonPageMethods.generateRandomString();
 const password=CommonPageMethods.generateRandomString(7);
+const existingUser="random01"
 
-describe(CommonPageData.testSuites.registroYAutenticacion,()=>{
-    it("Registro y Autenticacion",()=>{
+
+describe(CommonPageData.testSuites.Registro,()=>{
+    it("Registro de usuario valido",()=>{
         Logger.stepNumber(1)
         Logger.step("Navegar a la página de inicio")
         CommonPageMethods.navigateToDemoBlaze()
@@ -20,13 +22,12 @@ describe(CommonPageData.testSuites.registroYAutenticacion,()=>{
         Logger.step('Completar todos los campos obligatorios con información válida')
         SignupMethods.insertUsername(user)
         SignupMethods.insertPassword(password)
-        cy.wait(10000)
         
         Logger.stepNumber(4)
         Logger.step('Hacer clic en "Sign up" para registrar el usuario.')
         SignupMethods.clickOnSignButton()
-        Logger.verification("Verificar que se muestre el mensaje 'Sign up successful'")
-        SignupMethods.verifySignupSuccesfulMessageIsDisplayed();
+        Logger.verification("Verificar que se muestre un mensaje de error indicando los campos invalidos")
+        SignupMethods.verifyThatThisUserAlreadyExistMessageIsDisplayed();
         
 
     });
@@ -37,4 +38,30 @@ describe(CommonPageData.testSuites.registroYAutenticacion,()=>{
     Paso 4: Hacer clic en "Sign up" para registrar el usuario.
     Paso 4.1: Verificar que se redirige al usuario a la página de inicio de sesión
     */ 
+
+
+
+      it("Registro de usuario invalido",()=>{
+        Logger.stepNumber(1)
+        Logger.step("Navegar a la página de inicio")
+        CommonPageMethods.navigateToDemoBlaze()
+
+        Logger.stepNumber(2)
+        Logger.step('Hacer clic en "Sign up" en la barra de navegación')
+        CommonPageMethods.clickOnSignUpOption();
+
+        Logger.stepNumber(3)
+        Logger.step('Completar todos los campos obligatorios con información inválida')
+        SignupMethods.insertUsername(existingUser)
+        SignupMethods.insertPassword(password)
+        cy.wait(10000)
+        
+        Logger.stepNumber(4)
+        Logger.step('Hacer clic en "Sign up" para registrar el usuario.')
+        SignupMethods.clickOnSignButton()
+        Logger.verification("Verificar que se muestre el mensaje 'Sign up successful'")
+        SignupMethods.verifySignupSuccesfulMessageIsDisplayed();
+        
+
+    });
 });
