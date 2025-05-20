@@ -46,7 +46,7 @@ describe(CommonPageData.testSuites.Autenticacion,()=>{
         Logger.step("Hacer clic en 'log in' para iniciar sesión")
         LoginMethods.clickOnLoginButton();
         Logger.verification("Verificar que se muestra un mensaje de error indicando que el inicio de sesión ha fallado")
-        LoginMethods.verifyWrongPasswordMessage();
+        LoginMethods.verifyWrongPasswordMessage()
 
         
     });

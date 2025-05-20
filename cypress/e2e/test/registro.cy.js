@@ -29,7 +29,7 @@ describe(CommonPageData.testSuites.Registro,()=>{
         SignupMethods.clickOnSignButton()
         Logger.verification("Verificar que se muestre un mensaje de error indicando los campos invalidos")
         SignupMethods.verifyThatThisUserAlreadyExistMessageIsDisplayed();
-        cy.wait(10000)
+       
 
     });
     /*
@@ -55,7 +55,7 @@ describe(CommonPageData.testSuites.Registro,()=>{
         Logger.step('Completar todos los campos obligatorios con información válida')
         SignupMethods.insertUsername(user)
         SignupMethods.insertPassword(password)
-        cy.wait(10000)
+        
         
         Logger.stepNumber(4)
         Logger.step('Hacer clic en "Sign up" para registrar el usuario.')

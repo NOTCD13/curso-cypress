@@ -12,10 +12,10 @@ export class CommonPageMethods{
         CommonPageElements.topMenu.Contact.click();
     }
     static clickOnAboutOption(){
-        CommonPageElements.topMenu.home.click();
-    }
-    static clickOnAboutUsOption(){
         CommonPageElements.topMenu.AboutUS.click();
+    }
+    static clickOnCartOption(){
+        CommonPageElements.topMenu.Cart.click();
     }
     static clickOnLogInOption(){
         CommonPageElements.topMenu.LogIn.click();
