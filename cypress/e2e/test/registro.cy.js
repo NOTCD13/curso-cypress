@@ -10,7 +10,7 @@ const existingUser=LoginData.validcredentilas.username
 
 
 describe(CommonPageData.testSuites.Registro,()=>{
-    it("Registro de usuario valido",()=>{
+    it("Registro de usuario invalido",()=>{
         Logger.stepNumber(1)
         Logger.step("Navegar a la página de inicio")
         CommonPageMethods.navigateToDemoBlaze()
@@ -20,8 +20,8 @@ describe(CommonPageData.testSuites.Registro,()=>{
         CommonPageMethods.clickOnSignUpOption();
 
         Logger.stepNumber(3)
-        Logger.step('Completar todos los campos obligatorios con información válida')
-        SignupMethods.insertUsername(user)
+        Logger.step('Completar todos los campos obligatorios con información inválida')
+        SignupMethods.insertUsername(existingUser)
         SignupMethods.insertPassword(password)
         
         Logger.stepNumber(4)
@@ -42,27 +42,27 @@ describe(CommonPageData.testSuites.Registro,()=>{
 
 
 
-    //   it("Registro de usuario invalido",()=>{
-    //     Logger.stepNumber(1)
-    //     Logger.step("Navegar a la página de inicio")
-    //     CommonPageMethods.navigateToDemoBlaze()
+      it("Registro de usuario invalido",()=>{
+        Logger.stepNumber(1)
+        Logger.step("Navegar a la página de inicio")
+        CommonPageMethods.navigateToDemoBlaze()
 
-    //     Logger.stepNumber(2)
-    //     Logger.step('Hacer clic en "Sign up" en la barra de navegación')
-    //     CommonPageMethods.clickOnSignUpOption();
+        Logger.stepNumber(2)
+        Logger.step('Hacer clic en "Sign up" en la barra de navegación')
+        CommonPageMethods.clickOnSignUpOption();
 
-    //     Logger.stepNumber(3)
-    //     Logger.step('Completar todos los campos obligatorios con información inválida')
-    //     SignupMethods.insertUsername(existingUser)
-    //     SignupMethods.insertPassword(password)
-    //     cy.wait(10000)
+        Logger.stepNumber(3)
+        Logger.step('Completar todos los campos obligatorios con información válida')
+        SignupMethods.insertUsername(user)
+        SignupMethods.insertPassword(password)
+        cy.wait(10000)
         
-    //     Logger.stepNumber(4)
-    //     Logger.step('Hacer clic en "Sign up" para registrar el usuario.')
-    //     SignupMethods.clickOnSignButton()
-    //     Logger.verification("Verificar que se muestre el mensaje 'Sign up successful'")
-    //     SignupMethods.verifySignupSuccesfulMessageIsDisplayed();
+        Logger.stepNumber(4)
+        Logger.step('Hacer clic en "Sign up" para registrar el usuario.')
+        SignupMethods.clickOnSignButton()
+        Logger.verification("Verificar que se muestre el mensaje 'Sign up successful'")
+        SignupMethods.verifySignupSuccesfulMessageIsDisplayed();
         
 
-    // });
+    });
 });
