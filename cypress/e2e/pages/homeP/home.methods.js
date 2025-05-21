@@ -16,6 +16,6 @@ export class homeMethods{
     }
 
     static verifyProductDisplayed(productName){
-        homeElements.product(productName).should("be.visit")
+        homeElements.product(productName).should("be.visible")
     }
 }

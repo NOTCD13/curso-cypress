@@ -7,6 +7,7 @@ import { Logger } from "../util/logger";
 import { homeMethods } from "../pages/homeP/home.methods";
 
 const user = LoginData.validcredentilas.username
+const password = LoginData.validcredentilas.password
 
 describe(CommonPageData.testSuites.CatalogoYCompras, ()=>{
     it("navegacion por categorias",()=>{
@@ -16,7 +17,7 @@ describe(CommonPageData.testSuites.CatalogoYCompras, ()=>{
         CommonPageMethods.navigateToDemoBlaze();
         Logger.subStep("click on 'Log in' link")
         CommonPageMethods.clickOnLogInOption();
-        LoginMethods.Login(user.username, user.password)
+        LoginMethods.Login(user,password)
         
         Logger.stepNumber(2)
         Logger.step("navegar a la pagina de inicio")
