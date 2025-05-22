@@ -45,3 +45,6 @@ xdescribe('template spec', () => {
 
   })
 }) 
+
+//  "ejecutar-pruebas": "cypress run --headed --env allure=true --spec 'cypress/e2e/test/Autenticacion.cy.js'"
+//Para ejecutar un caso de prueba especifico
