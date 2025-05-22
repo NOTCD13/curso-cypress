@@ -4,7 +4,7 @@ import { LoginData } from "../pages/login/login.data";
 import { LoginMethods } from "../pages/login/login.methods";
 import { Logger } from "../util/logger";
 
-xdescribe(CommonPageData.testSuites.Autenticacion,()=>{
+describe(CommonPageData.testSuites.Autenticacion,()=>{
     it("inicio de sesion valido",()=>{
         Logger.stepNumber(1)
         Logger.step("Navegar a la página de inicio")
@@ -24,7 +24,8 @@ xdescribe(CommonPageData.testSuites.Autenticacion,()=>{
         LoginMethods.clickOnLoginButton();
         Logger.verification("Verificar que se redirige al usuario a la página de inicio")
         CommonPageMethods.verifySignedUser(LoginData.validcredentilas.username)
-
+        Logger.postCondicion("Log out")
+        CommonPageMethods.logout();
         
     });
 
@@ -47,6 +48,8 @@ xdescribe(CommonPageData.testSuites.Autenticacion,()=>{
         LoginMethods.clickOnLoginButton();
         Logger.verification("Verificar que se muestra un mensaje de error indicando que el inicio de sesión ha fallado")
         LoginMethods.verifyWrongPasswordMessage()
+
+        
 
         
     });

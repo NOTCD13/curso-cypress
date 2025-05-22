@@ -9,7 +9,7 @@ const password=CommonPageMethods.generateRandomString(7);
 const existingUser=LoginData.validcredentilas.username
 
 
-xdescribe(CommonPageData.testSuites.Registro,()=>{
+describe(CommonPageData.testSuites.Registro,()=>{
     it("Registro de usuario invalido",()=>{
         Logger.stepNumber(1)
         Logger.step("Navegar a la página de inicio")
