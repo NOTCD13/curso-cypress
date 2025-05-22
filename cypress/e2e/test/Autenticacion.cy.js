@@ -26,6 +26,7 @@ describe(CommonPageData.testSuites.Autenticacion,()=>{
         CommonPageMethods.verifySignedUser(LoginData.validcredentilas.username)
         Logger.postCondicion("Log out")
         CommonPageMethods.logout();
+        cy.wait(10000)
         
     });
 
