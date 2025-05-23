@@ -4,7 +4,7 @@
   "passes": 2,
   "pending": 0,
   "failures": 0,
-  "start": "2025-05-23T11:01:49.116Z",
-  "duration": 24328,
+  "start": "2025-05-23T11:44:30.844Z",
+  "duration": 23888,
   "file": "cypress\\e2e\\test\\Autenticacion.cy.js"
 }

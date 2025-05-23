@@ -151,7 +151,7 @@ describe(CommonPageData.testSuites.CatalogoYCompras, ()=>{
         Logger.postCondicion("log out")
         CommonPageMethods.logout();
 
-
+        
 
     })
 })
