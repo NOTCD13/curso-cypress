@@ -42,7 +42,7 @@ describe(CommonPageData.testSuites.Registro,()=>{
 
 
 
-      it("Registro de usuario invalido",()=>{
+      it("Registro de usuario valido",()=>{
         Logger.stepNumber(1)
         Logger.step("Navegar a la página de inicio")
         CommonPageMethods.navigateToDemoBlaze()

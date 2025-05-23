@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "limpiar-reporte": "rimraf ./allure-report && rimraf ./allure-results",
-    "ejecutar-pruebas": "cypress run --headed --env allure=true",
-    "generar-reporte": "allure generate allure-results -o allure-report --clean",
-    "abrir-report": "allure open",
-    "test": " npx npm run limpiar-reporte && (npx npm run ejecutar-pruebas || true) && npx npm run generar-reporte && npx npm run abrir-report"
+    "limpiar-reporte": "npx rimraf ./allure-report && npx rimraf ./allure-results",
+    "ejecutar-pruebas": "npx cypress run --headed --env allure=true",
+    "generar-reporte": "npx allure generate allure-results -o allure-report --clean",
+    "abrir-report": "npx allure open",
+    "test": " npm run limpiar-reporte && (npx npm run ejecutar-pruebas || true) && npm run generar-reporte && npm run abrir-report",
+    "cy:parallel":"npm run limpiar-reporte && cypress-parallel -s ejecutar-pruebas -t 2 -d ./cypress/e2e/test && npm run generar-reporte && npm run abrir-report"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,8 @@
   },
   "homepage": "https://github.com/NOTCD13/curso-cypress#readme",
   "devDependencies": {
-    "cypress": "^14.4.0"
+    "cypress": "^14.4.0",
+    "cypress-parallel": "^0.15.0"
   },
   "dependencies": {
     "@shelex/cypress-allure-plugin": "^2.41.1",
